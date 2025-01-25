@@ -1,7 +1,7 @@
 import argparse
 from pathlib import Path
 
-from ..viz import plot_nifti
+from open_dive.viz import plot_nifti
 
 
 def main():
@@ -33,6 +33,11 @@ def main():
         help="Optional value range to pass to slicer. Default is min/max of image.",
     )
     parser.add_argument(
+        "--volume_idx",
+        type=int,
+        help="Index of the volume to display if the image is 4D",
+    )
+    parser.add_argument(
         "--interpolation",
         default="nearest",
         help="Interpolation method to use (nearest or linear). Default is 'nearest'.",
@@ -42,6 +47,18 @@ def main():
         action="store_true",
         help="Do not plot in radiological view (i.e., subject right is on image right)",
     )
+    parser.add_argument(
+        "--scalar_colorbar",
+        action="store_true",
+        help="Whether to show a colorbar, by default True",
+    )
+    parser.add_argument(
+        ## plot tractogram with slices
+        "--tractography",
+        type=Path,
+        help="Optional tractogram to plot with slices",
+    )
+
 
     args = parser.parse_args()
 
@@ -51,9 +68,14 @@ def main():
         data_slice=args.slice,
         orientation=args.orientation,
         size=args.size,
+        volume_idx=args.volume_idx,
         radiological=not args.not_radiological,
         save_path=args.save_path,
         interactive=args.interactive,
         value_range=args.value_range,
         interpolation=args.interpolation,
+        scalar_colorbar=args.scalar_colorbar,
+        tractography=args.tractography,
+
     )
+

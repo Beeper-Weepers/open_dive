@@ -15,11 +15,31 @@ TBD
 
 ## Usage
 
-TBD
+**Generic usage**
+Initialize the conda or UV environment.
+Run nifti2png directly as a command - do not run it with python.
+By default, the tool will not display anything unless you use `--interactive`.
+``nifti2png <arguments> path/to/file.nii.gz``
+
+**Flags**
+``--interactive`` : Will display a rotatable model of the slice in a window
+``--value-range``: Requires two arguments for the min and max value range. The default is min-max of the entire data set, but this can be less useful in some cases. Refer to the color bar display in interactive mode to help define your specific range.
+``--orientation`` or `-o`: The orientation of the slice of MRI image taken. Possible arguments are are `axial`, `saggital`, or `coronal`. 
+``-slice``: Specifices the slice to display. Uses `m` to display the middle, or an integer (e.g. `10`) of the number of the slice
+
 
 ## Contributing
 
 For details on contributing, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Contributors
+- @saundersresearch
+- @ElyssaMcMaster
+- @neurolabusc
+- @johaankjis
+- @orekiwlg
+- @mukhsadr
+- @Beeper-Weepers
 
 ## License
 
