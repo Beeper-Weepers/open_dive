@@ -52,6 +52,9 @@ def plot_nifti(
     scene = window.Scene()
     scene.add(slice_actor)
 
+    if data_slice != "m":
+        data_slice = int(data_slice)
+
     # Get slice if not defined
     if orientation == "axial":
         data_slice = data.shape[2] // 2 if data_slice == "m" else data_slice
