@@ -22,8 +22,8 @@ def main():
     )
     parser.add_argument("--save_path", help="Optional path to save to")
     parser.add_argument(
-        "--interactive",
-        action="store_true",
+        "--not_interactive",
+        action="store_false",
         default=True,
         help="Whether to interactively show the scene",
     )
@@ -72,7 +72,7 @@ def main():
         volume_idx=args.volume_idx,
         radiological=not args.not_radiological,
         save_path=args.save_path,
-        interactive=args.interactive,
+        interactive=args.not_interactive,
         value_range=args.value_range,
         interpolation=args.interpolation,
         scalar_colorbar=args.scalar_colorbar,
