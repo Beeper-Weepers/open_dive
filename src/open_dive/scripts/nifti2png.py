@@ -24,6 +24,7 @@ def main():
     parser.add_argument(
         "--interactive",
         action="store_true",
+        default=True,
         help="Whether to interactively show the scene",
     )
     parser.add_argument(
