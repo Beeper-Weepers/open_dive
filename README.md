@@ -26,6 +26,8 @@ nifti2png <arguments> path/to/file.nii.gz
 
 **Flags**
 
+``--not_interactive``: Turns off the display component of nifti2png
+
 ``--value-range``: Requires two arguments for the min and max value range. The default is min-max of the entire data set, but this can be less useful in some cases. Refer to the color bar display in interactive mode to help define your specific range.
 
 ``--orientation`` or `-o`: The orientation of the slice of MRI image taken. Possible arguments are are `axial`, `saggital`, or `coronal`. 
